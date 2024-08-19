@@ -3,7 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import faiss
 import numpy as np
 import torch
-from model_loader import load_t5_model
+from answer_generation.model_loader import load_t5_model
 
 class QueryProcessor:
     def __init__(self, model_path="t5-base"):
