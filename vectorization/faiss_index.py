@@ -59,6 +59,7 @@ if __name__ == "__main__":
     # Check if the loaded index is trained and functional
     print("Is the index trained?", loaded_faiss_index.is_trained)
 
+
     # Test a search query with FAISS index
     query_vector = np.array([vectors[0]], dtype=np.float32)  # Example: using the first vector as a query
     D, I = loaded_faiss_index.search(query_vector, k=5)  # Find the 5 nearest neighbors
