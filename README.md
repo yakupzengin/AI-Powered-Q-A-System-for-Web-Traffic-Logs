@@ -1,4 +1,5 @@
 # AI-Powered Q&A System for Web Traffic Logs
+- **Project Report** : [Report](https://github.com/yakupzengin/AI-Powered-Q-A-System-for-Web-Traffic-Logs/blob/main/Yakup-Zengin-Project-Report.pdf)
 
 ## Overview
 
@@ -82,7 +83,7 @@ The developed AI-powered Q&A system effectively processes web traffic data and p
 
 ## Appendices
 
-- **Code**: [Project Code](https://github.com/yakupzengin/AI-Powered-Q-A-System-for-Web-Traffic-Logs/blob/main/Yakup-Zengin-Project-Report.pdf)
+- **Report**: [Project Code](https://github.com/yakupzengin/AI-Powered-Q-A-System-for-Web-Traffic-Logs/blob/main/Yakup-Zengin-Project-Report.pdf)
 - **Test**: [Test ](https://github.com/yakupzengin/AI-Powered-Q-A-System-for-Web-Traffic-Logs/tree/main/test)
 
 This README.md provides a comprehensive overview and evaluation of the project, summarizing the key components and findings. For further details or to contribute to the project, please refer to the links provided above.
