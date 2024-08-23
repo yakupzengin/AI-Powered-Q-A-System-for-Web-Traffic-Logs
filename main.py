@@ -1,16 +1,19 @@
 import pandas as pd
-import time
+import numpy as np
 from data_preparation.file_reader import read_log_file
 from data_preparation.data_cleaner import clean_data
 from data_preparation.data_saver import save_cleaned_data
 from vectorization.vectorizer import vectorize_data
 from vectorization.faiss_index import build_faiss_index, save_faiss_index, load_faiss_index
 from answer_generation.query_processor import QueryProcessor
+import joblib  # For saving and loading the vectorizer
 
 if __name__ == "__main__":
     log_file_path = "data/web_log_data.log"
     cleaned_data_path = "data/cleaned_data.csv"
     index_file_path = "data/cleaned_data_faiss.index"
+    vectors_file_path = "data/vectorized_data.npy"
+    vectorizer_file_path = "data/vectorizer.pkl"  # Path to save the vectorizer
 
     # Read the log data
     log_data = read_log_file(log_file_path)
@@ -22,6 +25,11 @@ if __name__ == "__main__":
     # Vectorize the cleaned data and build FAISS index
     log_data = pd.read_csv(cleaned_data_path)
     vectors, vectorizer = vectorize_data(log_data)
+
+    # Save vectors and vectorizer to files
+    np.save(vectors_file_path, vectors)
+    joblib.dump(vectorizer, vectorizer_file_path)
+
     faiss_index = build_faiss_index(vectors)
     save_faiss_index(faiss_index, index_file_path)
 
