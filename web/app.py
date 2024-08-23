@@ -1,22 +1,18 @@
-data_file = r'C:\Users\yakupzengin\AI-Powered-Q-A-System-for-Web-Traffic-Logs\data\cleaned_data.csv'
-index_file = r'C:\Users\yakupzengin\AI-Powered-Q-A-System-for-Web-Traffic-Logs\data\cleaned_data_faiss.index'
-
-vectors_file = r'C:\Users\yakupzengin\AI-Powered-Q-A-System-for-Web-Traffic-Logs\data/vectorized_data.npy'
 from flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
 import faiss
 from answer_generation.query_processor import QueryProcessor
+import joblib
 
 app = Flask(__name__)
 
 # Define the file paths
 data_file = r'C:\Users\yakupzengin\AI-Powered-Q-A-System-for-Web-Traffic-Logs\data\cleaned_data.csv'
 index_file = r'C:\Users\yakupzengin\AI-Powered-Q-A-System-for-Web-Traffic-Logs\data\cleaned_data_faiss.index'
-
 vectors_file = r'C:\Users\yakupzengin\AI-Powered-Q-A-System-for-Web-Traffic-Logs\data/vectorized_data.npy'
 
-vectorizer_file = r'C:\Users\yakupzengin\AI-Powered-Q-A-System-for-Web-Traffic-Logs\data/vectorizer.pkl'  # Path to save the vectorizer
+vectorizer_file = r'C:\Users\yakupzengin\AI-Powered-Q-A-System-for-Web-Traffic-Logs\data/vectorizer.pkl'
 
 try:
     # Load the data
@@ -25,16 +21,14 @@ try:
     faiss_index = faiss.read_index(index_file)
     query_processor = QueryProcessor()
 
-    # Load the vectorizer (assuming you saved it previously)
-    import joblib
+    # load the vectorizer
 
     vectorizer = joblib.load(vectorizer_file)
-    query_processor.set_vectorizer(vectorizer)  # Set the trained vectorizer if needed
+    query_processor.set_vectorizer(vectorizer)  # Set the trained vectorizer
 
 except FileNotFoundError as e:
     print(f"Error: {e}")
     exit(1)
-
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
