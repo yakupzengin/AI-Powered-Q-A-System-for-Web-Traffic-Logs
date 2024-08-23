@@ -12,11 +12,13 @@ The AI-Powered Q&A System for Web Traffic Logs is an advanced system designed to
    - [Data Preparation](#data-preparation)
    - [Vectorization and FAISS Index](#vectorization-and-faiss-index)
    - [Query Processing and Response Generation](#query-processing-and-response-generation)
-3. [Testing](#testing)
-4. [Performance Evaluation](#performance-evaluation)
-5. [Improvement Recommendations](#improvement-recommendations)
-6. [Conclusion](#conclusion)
-7. [Appendices](#appendices)
+   - [Web Integration](#web-integration)
+3. [Web Interface Screenshots](#web-interface-screenshots)
+4. [Testing](#testing)
+5. [Performance Evaluation](#performance-evaluation)
+6. [Improvement Recommendations](#improvement-recommendations)
+7. [Conclusion](#conclusion)
+8. [Appendices](#appendices)
 
 ## Introduction
 
@@ -39,11 +41,25 @@ This project aims to build a robust system capable of handling complex queries r
 
 - **Query Processor**: Processes user queries and generates answers by leveraging the FAISS index and vectorized data.
 
+### Web Integration
+
+- **Web Interface (app.py)**: A Flask-based web interface that allows users to submit queries and receive responses, leveraging backend components like the Vectorizer, FAISS Index, and Query Processor. The interface is rendered through the `index.html` template.
+
+## Web Interface Screenshots
+
+Below are screenshots of the web interface, demonstrating how users interact with the system:
+
+1. **Home Page**: The main interface where users can input their queries.
+   ![Home Page Screenshot](screenshot/img.png)
+
+2. **Query Result Page**: The page that displays the results after processing a user's query.
+   ![Query Result Screenshot](screenshot/img_1.png)
+
 ## Testing
 
 The system has been rigorously tested to ensure all components work as expected. Here are the details of the test files and their purposes:
 
-**Test**: [Test Code ](https://github.com/yakupzengin/AI-Powered-Q-A-System-for-Web-Traffic-Logs/tree/main/test)
+**Test**: [Test Code](https://github.com/yakupzengin/AI-Powered-Q-A-System-for-Web-Traffic-Logs/tree/main/test)
 
 - **test_file_reader.py**: Tests the Data Reader component to ensure it correctly reads log data from files and handles different log formats accurately.
 - **test_data_cleaner.py**: Evaluates the Data Cleaner component for its effectiveness in removing noise while preserving necessary data.
@@ -83,8 +99,8 @@ The developed AI-powered Q&A system effectively processes web traffic data and p
 
 ## Appendices
 
-- **Report**: [Project Code](https://github.com/yakupzengin/AI-Powered-Q-A-System-for-Web-Traffic-Logs/blob/main/Yakup-Zengin-Project-Report.pdf)
-- **Test**: [Test ](https://github.com/yakupzengin/AI-Powered-Q-A-System-for-Web-Traffic-Logs/tree/main/test)
+- **Report**: [Project Report](https://github.com/yakupzengin/AI-Powered-Q-A-System-for-Web-Traffic-Logs/blob/main/Yakup-Zengin-Project-Report.pdf)
+- **Test Code**: [Test Code](https://github.com/yakupzengin/AI-Powered-Q-A-System-for-Web-Traffic-Logs/tree/main/test)
 
 This README.md provides a comprehensive overview and evaluation of the project, summarizing the key components and findings. For further details or to contribute to the project, please refer to the links provided above.
 
