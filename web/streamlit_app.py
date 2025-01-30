@@ -19,10 +19,10 @@ st.set_page_config(
 @st.cache_resource
 def load_resources():
     # Define the file paths
-    data_file = r'C:\Users\yakupzengin\AI-Powered-Q-A-System-for-Web-Traffic-Logs\data\cleaned_data.csv'
-    index_file = r'C:\Users\yakupzengin\AI-Powered-Q-A-System-for-Web-Traffic-Logs\data\cleaned_data_faiss.index'
-    vectors_file = r'C:\Users\yakupzengin\AI-Powered-Q-A-System-for-Web-Traffic-Logs\data\vectorized_data.npy'
-    vectorizer_file = r'C:\Users\yakupzengin\AI-Powered-Q-A-System-for-Web-Traffic-Logs\data\vectorizer.pkl'
+    data_file= "../data/cleaned_data.csv"
+    index_file = "../data/cleaned_data_faiss.index"
+    vectors_file = "../data/vectorized_data.npy"
+    vectorizer_file = "../data/vectorizer.pkl"
 
     try:
         log_data = pd.read_csv(data_file)
