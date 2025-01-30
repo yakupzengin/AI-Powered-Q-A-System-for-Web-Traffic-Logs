@@ -4,8 +4,8 @@ import pandas as pd
 import faiss
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from answer_generation.query_processor import QueryProcessor
 import joblib
 
@@ -19,10 +19,10 @@ st.set_page_config(
 @st.cache_resource
 def load_resources():
     # Define the file paths
-    data_file= "../data/cleaned_data.csv"
-    index_file = "../data/cleaned_data_faiss.index"
-    vectors_file = "../data/vectorized_data.npy"
-    vectorizer_file = "../data/vectorizer.pkl"
+    data_file= "data/cleaned_data.csv"
+    index_file = "data/cleaned_data_faiss.index"
+    vectors_file = "data/vectorized_data.npy"
+    vectorizer_file = "data/vectorizer.pkl"
 
     try:
         log_data = pd.read_csv(data_file)
