@@ -2,7 +2,12 @@ from flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
 import faiss
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from answer_generation.query_processor import QueryProcessor
+
 import joblib
 
 app = Flask(__name__)
